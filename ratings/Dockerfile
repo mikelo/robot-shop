@@ -12,7 +12,7 @@ RUN echo "instana.enable_auto_profile=1" > "/usr/local/etc/php/conf.d/zzz-instan
 # relax permissions on status
 COPY status.conf /etc/apache2/mods-available/status.conf
 # Enable Apache mod_rewrite and status
-RUN a2enmod rewrite && a2enmod status
+RUN a2enmod rewrite && a2enmod status && sed -i 's/Listen 80/Listen 8080/g' /etc/apache2/ports.conf
 
 WORKDIR /var/www/html
 
