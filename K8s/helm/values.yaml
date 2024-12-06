@@ -53,9 +53,10 @@ rabbitmq: {}
 
 ratings: {}
 
-redis:
+redis: {}
+  # removed because in order to use default one instead
   # Storage class to use with redis statefulset.
-  storageClassName: standard
+  # storageClassName: standard 
 
 shipping: {}
 
